@@ -35,9 +35,10 @@ class ColorPalette extends React.Component {
     getClickedPos = obj => {
         let curleft = 0, curtop = 0;
         if (obj.offsetParent) {
+            let rect = obj.getBoundingClientRect();
             do {
-                curleft += obj.offsetLeft;
-                curtop += obj.offsetTop;
+                curleft += rect.left;
+                curtop += rect.top;
             } while (obj === obj.offsetParent);
             return {x: curleft, y: curtop};
         }
@@ -53,6 +54,7 @@ class ColorPalette extends React.Component {
     getColor = e => {
         let pos = this.getClickedPos(e.target);
         let x = e.pageX - pos.x;
+        console.log(pos)
         let y = e.pageY - pos.y;
         let c = e.target.getContext('2d');
         let p = c.getImageData(x, y, 1, 1).data;
@@ -121,6 +123,7 @@ class ColorPalette extends React.Component {
                                 let color = this.getColor(e);
                                 if (color && color != 0) {
                                     states.draw.changeColor('#' + color);
+                                    states.draw.polygon.changeFillColor('#' + color);
                                     actions.setColor('#' + color);
                                 }
                             }}

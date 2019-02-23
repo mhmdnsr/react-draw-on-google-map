@@ -42,6 +42,7 @@ class Map extends React.Component {
             this.actions.mapLoaded();
             this.actions.setMapDraw(draw);
             this.props.context.states.draw.marker.changeIcon('colorful');
+            this.props.context.states.draw.polygon.changeOpacity(0.5);
         });
     };
 
