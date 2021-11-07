@@ -8,7 +8,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.7.2",
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "draw-on-google-maps": "^0.9.7",
+    "draw-on-google-maps": "^1.0.2",
     "popmotion": "^8.6.3",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
